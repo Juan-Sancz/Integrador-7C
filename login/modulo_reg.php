@@ -12,17 +12,22 @@
 
             $check = "SELECT * FROM usuarios WHERE username = '".$username."' OR email = '".$email."'";
             $queryCheck = mysqli_query($con,$check);
-            //$resCheck = mysqli_fetch_array($queryCheck);
+            $resCheck = mysqli_fetch_array($queryCheck);
 
-                if($queryCheck){
+                if(isset($resCheck["id"])){
 
+                    $response = array("status" => "error", "message" => "Registro fallido. Porfavor intente otra vez.");
+                    echo json_encode($response);
+                
+            }else{
 
                 $sql = "INSERT INTO usuarios (username, password, email) VALUES ('".$username."','".$password."','".$email."')";
                 $query = mysqli_query($con,$sql);
 
 
                 if($query){
-                    echo "hola";
+                    $response = array("status" => "success", "message" => "Registro exitoso!");
+                    echo json_encode($response);
                     $sel = "SELECT * FROM usuarios WHERE username = '".$username."' AND password = '".$password."' AND email = '".$email."'";
                     $querySel = mysqli_query($con,$sel);
                     if($querySel){
@@ -35,8 +40,6 @@
                 }else{
                     echo "chau";
                 }
-            }else{
-                echo "error";
             }
 
         }

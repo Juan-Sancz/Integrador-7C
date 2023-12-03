@@ -19,65 +19,73 @@ enviar.addEventListener("click", function(){
         url: "../login/modulo_reg.php",
         type: "POST",
         data: data,
-        success: function(result){
-            console.log(result);
+        dataType: "json",
+        success: function(response){
+            console.log(response);
             let timerInterval;
-            Swal.fire({
-                title: 'Cargando...',
-                timer: 1000,
-                didOpen: () => {
-                    Swal.showLoading();
-                    const b = Swal.getHtmlContainer().querySelector('b');
-                    timerInterval = setInterval(() => {
-                        b.textContent = Swal.getTimerLeft();
-                    }, 100);
-                },
-                willClose: () => {
-                    clearInterval(timerInterval);
-                }
-            }).then((result) => {
-                if (result.dismiss === Swal.DismissReason.timer) {
+
+            if(response.status === "success"){
+
+                Swal.fire({
+                    title: 'Cargando...',
+                    timer: 1000,
+                    didOpen: () => {
+                        Swal.showLoading();
+                        const b = Swal.getHtmlContainer().querySelector('b');
+                        timerInterval = setInterval(() => {
+                            b.textContent = Swal.getTimerLeft();
+                        }, 100);
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval);
+                    }
+                }).then((result) => {
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: response.message,
+                            showConfirmButton: false,
+                            timer: 1500
+                        }).then(function () {
+                            // Use window.location.replace() instead of assigning to it
+                            window.location.replace("../index.php");
+                        });
+                    }
+                });
+            }else{
+                if(response.status === "error"){
+
                     Swal.fire({
-                        position: 'center',
-                        icon: 'success',
-                        title: 'Registrado con éxito',
-                        showConfirmButton: false,
-                        timer: 1500
-                    }).then(function () {
-                        // Use window.location.replace() instead of assigning to it
-                        window.location.replace("../index.php");
+                        title: 'Cargando...',
+                        timer: 1000,
+                        didOpen: () => {
+                            Swal.showLoading();
+                            const b = Swal.getHtmlContainer().querySelector('b');
+                            timerInterval = setInterval(() => {
+                                b.textContent = Swal.getTimerLeft();
+                            }, 100);
+                        },
+                        willClose: () => {
+                            clearInterval(timerInterval);
+                        }
+                    }).then((result) => {
+                        if (result.dismiss === Swal.DismissReason.timer) {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'error',
+                                title: response.message,
+                                showConfirmButton: false,
+                                timer: 1500
+                            }).then(function () {
+                                // Use window.location.replace() instead of assigning to it
+                                window.location.replace("register.php");
+                            });
+                        }
                     });
-                }
-            });
+
+              }
+            }
         },
-        error: function(error){
-            Swal.fire({
-                title: 'Cargando...',
-                timer: 1000,
-                didOpen: () => {
-                    Swal.showLoading();
-                    const b = Swal.getHtmlContainer().querySelector('b');
-                    timerInterval = setInterval(() => {
-                        b.textContent = Swal.getTimerLeft();
-                    }, 100);
-                },
-                willClose: () => {
-                    clearInterval(timerInterval);
-                }
-            }).then((result) => {
-                if (result.dismiss === Swal.DismissReason.timer) {
-                    Swal.fire({
-                        position: 'center',
-                        icon: 'error',
-                        title: 'Email repetido',
-                        showConfirmButton: false,
-                        timer: 1500
-                    }).then(function () {
-                        // Use window.location.replace() instead of assigning to it
-                        window.location.replace("register.php");
-                    });
-                }
-            });
-        }
     })
 })
