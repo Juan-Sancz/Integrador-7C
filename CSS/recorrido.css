@@ -1,5 +1,9 @@
 
-  
+  header{   
+    width: 100%;
+  }
+
+
   .rating {
     display: flex;
   }
@@ -16,10 +20,68 @@
     background-size: cover;
   }
   
-  .rating label:hover,
-.rating input:checked + label,
-.rating input:checked ~ label:hover {
-    background-image: url('../images/star-filled.png'); /* Replace 'filled-star.png' with your filled star image URL */
+    .rating label:hover,
+    .rating input:checked + label,
+    .rating input:checked ~ label:hover {
+        background-image: url('../images/star-filled.png'); /* Replace 'filled-star.png' with your filled star image URL */
   }
+
+  .mb-5 border p-4 rounded bg-lightl{
+
+    margin-bottom: 50px;
+
+  }
+
+
+  @media only screen and (max-width: 600px){
+
+    .reco{
+
+      text-align: center;
+
+    }
+    h3{
+
+      text-align: center;
+
+    }
+
+    h7{
+
+      font-weight: bold;
+      margin-top: 9px;
+      margin-right: 7px;
+      font-size: 9px;
   
-  
+    }
+
+  }
+
+  h7{
+
+    font-weight: bold;
+    margin-top: 9px;
+    margin-right: 7px;
+
+  }
+
+
+  .reco{
+
+    margin-bottom: 30px;
+
+}
+
+.in{
+
+    color:  #EB1E1E
+
+}
+
+.sat{
+
+    color: #43BA12;
+    margin-left: 7px;
+
+}
+

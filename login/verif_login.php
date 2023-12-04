@@ -19,6 +19,7 @@
                 echo json_encode($response);
                 $_SESSION["id"] = $res["id"];
                 $_SESSION["username"] = $res["username"];
+                $_SESSION["admin"] = $res["admin"];
                 
             }else{
                 $response = array("status" => "error", "message" => "Inicio de sesion fallido. Porfavor intente otra vez.");
