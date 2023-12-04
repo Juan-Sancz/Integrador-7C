@@ -1,11 +1,59 @@
-function rate(value) {
-   
+var recorrido_id = document.getElementById("recorrido_id");
+    var usuario_id = document.getElementById("usuario_id");
 
+function rateV(value) {
+
+    data = {
+        "value" : value,
+        "recorrido_id" : recorrido_id.value,
+        "usuario_id" : usuario_id.value
+    }
+   
     $.ajax({
 
-        url: "../PHP/modulos_carga/cal_vehiculo.php",
+        url: "PHP/modulos_carga/cal_vehiculo.php",
         type: "POST",
-        data: {"value" : value},
+        data: data,
+        success: function (response){
+            console.log(response);
+        }
+
+    })
+
+  }
+  function rateC(valueC) {
+
+    data = {
+        "value" : valueC,
+        "recorrido_id" : recorrido_id.value,
+        "usuario_id" : usuario_id.value
+    }
+   
+    $.ajax({
+
+        url: "PHP/modulos_carga/cal_conductor.php",
+        type: "POST",
+        data: data,
+        success: function (response){
+            console.log(response);
+        }
+
+    })
+
+  }
+  function rateR(valueR) {
+
+    data = {
+        "value" : valueR,
+        "recorrido_id" : recorrido_id.value,
+        "usuario_id" : usuario_id.value
+    }
+   
+    $.ajax({
+
+        url: "PHP/modulos_carga/cal_recorrido.php",
+        type: "POST",
+        data: data,
         success: function (response){
             console.log(response);
         }
