@@ -5,7 +5,7 @@
 
     if(isset($_SESSION["id"])){
 
-        $sel = "SELECT * FROM recorridos WHERE id = '".$_SESSION["id"]."'";
+        $sel = "SELECT * FROM recorridos WHERE id = '".$_POST["id"]."'";
         $query = mysqli_query($con,$sel);
         $res = mysqli_fetch_array($query);
 
@@ -29,8 +29,8 @@
                 include('PHP/header.php');
             ?>
 
-                <div class="main-content">
-                    <h2> <?php echo $res["localidad-inicio"]." - ".$res["localidad-fin"];?> </h2>
+                <div class="main-content row">
+                    <h2> <?php echo $res["localidad_inicio"]." - ".$res["localidad_fin"];?> </h2>
 
                     <div class="rating">
                         <input type="radio" name="rating" id="star1" onclick="rate(1)">

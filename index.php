@@ -35,7 +35,7 @@ $query = mysqli_query($con, $sel);
                     <div class="card" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title"> <?php echo $res["localidad-inicio"] . " - " . $res["localidad-fin"]; ?> </h5>
+                            <h5 class="card-title"> <?php echo $res["localidad_inicio"] . " - " . $res["localidad_fin"]; ?> </h5>
                             <p class="card-text"> <?php if ($res["cooperativa"] == 1) {
                                                         echo "CESOP";
                                                     } else {
