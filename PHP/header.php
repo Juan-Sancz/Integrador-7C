@@ -24,7 +24,7 @@
                 <?php if (!isset($_SESSION["id"])) { ?><a href="login/register.php"><button type="button" class="btn btn-warning">Registrate</button></a> <?php } ?>
 
                 <?php if (isset($_SESSION["id"])) { ?><a href="login/cerrar_sesion.php"><button type="button" class="btn btn-warning">Cerrar Sesion</button></a> <?php } ?>
-                <?php if (isset($_SESSION["admin"])) {if($_SESSION["admin"] == "1"){ ?><a href="carga.php"><button type="button" class="btn btn-warning">Admin</button></a> <?php }} ?>
+                <?php if (isset($_SESSION["admin"])) {if($_SESSION["admin"] == "1"){ ?><a href="admin.php"><button type="button" class="btn btn-warning">Admin</button></a> <?php }} ?>
             </div>
         </div>
     </div>
