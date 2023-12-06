@@ -32,7 +32,7 @@
                 <h2> Selecciona un vehiculo </h2> 
                 <select id="select_veh" class="form-select">
                     <?php while($resVeh = mysqli_fetch_array($queryVeh)){ ?>
-                        <option value="<?php echo $resVeh["id"];?>"><?php echo $resVeh["placa"]; ?>
+                        <option value="<?php echo $resVeh["id"];?>"><?php echo $resVeh["placa"]." - ". $resVeh["modelo"]; ?>
                     <?php } ?>
                 </select>
 
@@ -42,17 +42,17 @@
                 <h2> Selecciona un chofer </h2> 
                 <select id="select_cho" class="form-select">
                     <?php while($resCho = mysqli_fetch_array($queryCho)){ ?>
-                        <option value="<?php echo $resCho["id"];?>"><?php echo $resCho["dni"]; ?>
+                        <option value="<?php echo $resCho["id"];?>"><?php echo $resCho["dni"]." - ". $resCho["nombre"]; ?>
                     <?php } ?>
                 </select>
 
-                <button type="button" class="btn btn-primary" id="boton_cho"> Calcular chofere </button>
+                <button type="button" class="btn btn-primary" id="boton_cho"> Calcular chofer </button>
             </div>
             <div class="select">
                 <h2> Selecciona un recorrido </h2> 
                 <select id="select_rec" class="form-select">
                     <?php while($resRec = mysqli_fetch_array($queryRec)){ ?>
-                        <option value="<?php echo $resRec["id"];?>"><?php echo $resRec["localidad_inicio"]."-".$resRec["localidad_fin"]; ?>
+                        <option value="<?php echo $resRec["id"];?>"><?php echo $resRec["localidad_inicio"]." - ".$resRec["localidad_fin"]; ?>
                     <?php } ?>
                 </select>
 
@@ -68,6 +68,9 @@
                 </div>
             </div>
 
+        <div class="mb-5 border p-4 rounded bg-light">
+            <canvas id="barChart" width="400" height="200"></canvas>
+        </div>
         
     </div>
 

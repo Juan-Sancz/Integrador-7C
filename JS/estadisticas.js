@@ -17,7 +17,7 @@ document.getElementById("boton_veh").addEventListener("click", function(){
     var select_veh = document.getElementById("select_veh");
     var selected_veh = select_veh.options[select_veh.selectedIndex];
     var value_veh = selected_veh.value;
-    document.getElementById("titulo_stats").textContent = "Estadisticas de vehiculos";
+    document.getElementById("titulo_stats").textContent = "Calificaciones de vehiculos";
 
     // Make an AJAX request to your PHP file
     $.ajax({
@@ -55,7 +55,7 @@ document.getElementById("boton_cho").addEventListener("click", function(){
     var select_cho = document.getElementById("select_cho");
     var selected_cho = select_cho.options[select_coh.selectedIndex];
     var value_cho = selected_cho.value;
-    document.getElementById("titulo_stats").textContent = "Estadisticas de conductores";
+    document.getElementById("titulo_stats").textContent = "Calificaciones de conductores";
     // Make an AJAX request to your PHP file
     $.ajax({
         url: 'PHP/estadisticas_cho.php',
@@ -92,7 +92,7 @@ document.getElementById("boton_rec").addEventListener("click", function(){
     var select_rec = document.getElementById("select_rec");
     var selected_rec = select_rec.options[select_rec.selectedIndex];
     var value_rec = selected_rec.value;
-    document.getElementById("titulo_stats").textContent = "Estadisticas de recorridos";
+    document.getElementById("titulo_stats").textContent = "Calificaciones de recorridos";
     // Make an AJAX request to your PHP file
     $.ajax({
         url: 'PHP/estadisticas_rec.php',
