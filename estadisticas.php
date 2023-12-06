@@ -68,9 +68,6 @@
                 </div>
             </div>
 
-        <div class="mb-5 border p-4 rounded bg-light">
-            <canvas id="barChart" width="400" height="200"></canvas>
-        </div>
         
     </div>
 
