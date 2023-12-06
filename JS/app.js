@@ -61,4 +61,6 @@ function rateV(value) {
     })
 
   }
+
+  
   

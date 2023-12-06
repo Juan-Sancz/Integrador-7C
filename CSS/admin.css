@@ -1,0 +1,71 @@
+
+
+
+#container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.half {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.personal {
+
+
+    padding-top: 49%;
+    padding-bottom: 49%;
+    text-align: center;
+
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.personal:hover {
+    animation: colorChange 0.5s infinite alternate; /* Animation */
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: #B7B53E; /* Initial color */
+    }
+    100% {
+        background-color: #DCD922; /* Target color */
+    }
+}
+
+.estadisticas {
+
+
+    padding-top: 49%;
+    padding-bottom: 49%;
+    text-align: center;
+
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.estadisticas:hover {
+    animation: colorChange1 0.5s infinite alternate; /* Animation */
+}
+
+@keyframes colorChange1 {
+    0% {
+        background-color: #30A898; /* Initial color */
+    }
+    100% {
+        background-color: #2AE8CE; /* Target color */
+    }
+}

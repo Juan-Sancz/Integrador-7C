@@ -11,7 +11,7 @@
             $recorrido_id = $_POST["recorrido_id"];
             $usuario_id = $_POST["usuario_id"];
 
-            $cal = "INSERT INTO cal_recorrido (calificacion, id_recorrido, id_usuario) VALUES ('".$calificacion."','".$recorrido_id."', '".$usuario_id."')";
+            $cal = "INSERT INTO cal_recorrido (calificacion, id_recorrido, id_usuario) VALUES ('".$calificacion."', '".$recorrido_id."','".$usuario_id."')";
             $query = mysqli_query($con, $cal);
 
         }
