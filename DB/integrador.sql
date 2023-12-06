@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-12-2023 a las 20:39:14
+-- Tiempo de generación: 06-12-2023 a las 19:46:34
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -55,7 +55,7 @@ CREATE TABLE `cal_chofer` (
   `id` int(11) NOT NULL,
   `calificacion` int(11) NOT NULL,
   `id_recorrido` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
+  `id_chofer` int(11) NOT NULL,
   `comentario` varchar(1064) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -73,6 +73,15 @@ CREATE TABLE `cal_recorrido` (
   `comentario` varchar(1064) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `cal_recorrido`
+--
+
+INSERT INTO `cal_recorrido` (`id`, `calificacion`, `id_recorrido`, `id_usuario`, `comentario`) VALUES
+(1, 4, 1, 0, NULL),
+(2, 2, 2, 1, NULL),
+(3, 5, 0, 2, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -82,7 +91,7 @@ CREATE TABLE `cal_recorrido` (
 CREATE TABLE `cal_vehiculo` (
   `id` int(11) NOT NULL,
   `calificacion` int(10) NOT NULL,
-  `id_recorrido` int(11) NOT NULL,
+  `id_vehiculo` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `comentario` varchar(1064) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -91,8 +100,9 @@ CREATE TABLE `cal_vehiculo` (
 -- Volcado de datos para la tabla `cal_vehiculo`
 --
 
-INSERT INTO `cal_vehiculo` (`id`, `calificacion`, `id_recorrido`, `id_usuario`, `comentario`) VALUES
-(1, 2, 1, 2, NULL);
+INSERT INTO `cal_vehiculo` (`id`, `calificacion`, `id_vehiculo`, `id_usuario`, `comentario`) VALUES
+(1, 5, 1, 2, NULL),
+(2, 2, 2, 3, NULL);
 
 -- --------------------------------------------------------
 
@@ -346,13 +356,13 @@ ALTER TABLE `cal_chofer`
 -- AUTO_INCREMENT de la tabla `cal_recorrido`
 --
 ALTER TABLE `cal_recorrido`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `cal_vehiculo`
 --
 ALTER TABLE `cal_vehiculo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `choferes`
