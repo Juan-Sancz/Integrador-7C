@@ -16,6 +16,13 @@ function rateV(value) {
         data: data,
         success: function (response){
             console.log(response);
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: "Gracias por su aporte!",
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
 
     })
@@ -36,6 +43,13 @@ function rateV(value) {
         data: data,
         success: function (response){
             console.log(response);
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: "Gracias por su aporte!",
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
 
     })
@@ -56,11 +70,18 @@ function rateV(value) {
         data: data,
         success: function (response){
             console.log(response);
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: "Gracias por su aporte!",
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
 
     })
 
   }
 
-  
+
   

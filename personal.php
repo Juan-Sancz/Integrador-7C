@@ -82,7 +82,11 @@
                         <tr id="tabla" onclick="tipo(3)" value="<?php echo $resRec["id"]; ?>">
                             <td><?php echo $resRec["localidad_inicio"] ?></td>
                             <td><?php echo $resRec["localidad_fin"] ?></td>
-                            <td><?php echo $resRec["cooperativa"] ?></td>
+                            <td><?php if($resRec["cooperativa"] == 1){
+                                echo "CESOP";
+                            }else{
+                                echo "COSYC";
+                            } ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>
