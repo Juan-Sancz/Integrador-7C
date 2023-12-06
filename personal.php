@@ -34,7 +34,6 @@
                     <tr>
                     <th scope="col">Placa</th>
                     <th scope="col">Modelo</th>
-                    <th scope="col">Capacidad  de pasajeros</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,7 +41,6 @@
                         <tr id="tabla" onclick="tipo(1)" value="<?php echo $resVeh["id"]; ?>">
                             <td><?php echo $resVeh["placa"] ?></td>
                             <td><?php echo $resVeh["modelo"] ?></td>
-                            <td><?php echo $resVeh["capacidad_pasajeros"] ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>
