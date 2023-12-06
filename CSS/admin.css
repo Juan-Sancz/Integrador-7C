@@ -35,10 +35,10 @@
 
 @keyframes colorChange {
     0% {
-        background-color: #B7B53E; /* Initial color */
+        background-color: #578C3A; /* Initial color */
     }
     100% {
-        background-color: #DCD922; /* Target color */
+        background-color: #89DB5D; /* Target color */
     }
 }
 
@@ -63,9 +63,9 @@
 
 @keyframes colorChange1 {
     0% {
-        background-color: #30A898; /* Initial color */
+        background-color: #3B7280; /* Initial color */
     }
     100% {
-        background-color: #2AE8CE; /* Target color */
+        background-color: #61B3C8; /* Target color */
     }
 }
